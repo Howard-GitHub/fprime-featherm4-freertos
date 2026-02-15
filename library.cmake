@@ -10,11 +10,11 @@ set(ARDUINO_STM32_LIB_PATH "$ENV{HOME}/.arduino15/packages/STMicroelectronics/ha
 # Include directories for Arduino libraries
 include_directories(
     ${ARDUINO_LIB_PATH}/Time
-    ${ARDUINO_LIB_PATH}/STM32duino_FreeRTOS
-    ${ARDUINO_STM32_LIB_PATH}/Wire
-    ${ARDUINO_STM32_LIB_PATH}/SPI
+    ${ARDUINO_LIB_PATH}/STM32duino_FreeRTOS/src
+    ${ARDUINO_STM32_LIB_PATH}/libraries/Wire/src
+    ${ARDUINO_STM32_LIB_PATH}/libraries/SPI/src
 )
 
 #NOTE: This is corresponding to the FILE STM32FreeRTOS.h in STM32FreeRTOS (Github Repo)
 #       which the Arduino library STM32duino_FreeRTOS is pointing to
-#target_use_arduino_libraries("STM32FreeRTOS")
+target_use_arduino_libraries("STM32FreeRTOS")
