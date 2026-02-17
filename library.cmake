@@ -17,4 +17,7 @@ include_directories(
 
 #NOTE: This is corresponding to the FILE STM32FreeRTOS.h in STM32FreeRTOS (Github Repo)
 #       which the Arduino library STM32duino_FreeRTOS is pointing to
-target_use_arduino_libraries("STM32FreeRTOS")
+# Only call Arduino functions when building for the Arduino platform (not for unit tests)
+if(FPRIME_PLATFORM STREQUAL "FeatherM4_FreeRTOS")
+    target_use_arduino_libraries("STM32FreeRTOS")
+endif()
